@@ -1,12 +1,15 @@
-.nodeTbale {
-  background-color: antiquewhite;
+.main_content {
+  height: 100%;
   width: 100%;
 }
-.nodeTbale Button {
+.main_content .nodeTbale Button {
   margin: 10px 0;
 }
-.nodeTbale Table {
+.main_content .nodeTbale .name {
   margin: 0 20px;
+}
+.main_content .btn {
+  float: right;
 }
 .editable-cell {
   position: relative;
@@ -22,4 +25,7 @@
 }
 [data-theme='dark'] .editable-row:hover .editable-cell-value-wrap {
   border: 1px solid #434343;
+}
+.editable-cell-value-wrap {
+  padding-right: 24px;
 }

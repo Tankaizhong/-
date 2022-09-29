@@ -1,4 +1,3 @@
-import React, { useRef } from "react";
 import { delayTime } from "@/constant/idnex";
 type Fn = (...args: any) => any;
 //节流函数

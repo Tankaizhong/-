@@ -1,8 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import * as echarts from "echarts";
-
 import { useSelector } from "react-redux";
-import { ChartList } from "@/Rudex/Slice/ChartSlice";
+import { ChartList } from "@/Rudex/Slice/LinkSlice";
 import { NodeList } from "@/Rudex/Slice/NodeSlice";
 export default function index() {
   const domRef = useRef<HTMLDivElement | null>(null);
@@ -15,8 +14,8 @@ export default function index() {
   useSelector(NodeList).forEach((element: any) => {
     data.push({
       ...element,
-      x: Math.random() * (Math.random() * 500),
-      y: Math.random() * (Math.random() * 500),
+      x: Math.random() * 1100,
+      y: Math.random() * (Math.random() * 2000),
     });
   });
   const links = useSelector(ChartList);
@@ -51,11 +50,11 @@ export default function index() {
         },
       ],
     };
-    option && myChart.setOption(option);
+    option && myChart.setOption(option as any);
   };
 
   return (
-    <div style={{ width: "100%", height: "100%" }}>
+    <div style={{ width: "100%", height: "600px" }}>
       <div ref={domRef} style={{ height: "100%", width: "100%" }}></div>
     </div>
   );

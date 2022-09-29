@@ -1,7 +1,6 @@
 //初始化数据
 import { nanoid } from "nanoid";
 const NodeData: any[] = [];
-const map = new Map();
 for (let i = 0; i < 4; i++) {
   NodeData.push({
     key: nanoid(),
