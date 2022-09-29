@@ -1,0 +1,1 @@
+export const delayTime = 500;//节流函数
