@@ -1,9 +1,8 @@
-import React from "react";
-import { Menu, Layout } from "antd";
+import { Menu, Layout, Avatar } from "antd";
 import type { MenuProps } from "antd";
+import { AntDesignOutlined } from "@ant-design/icons";
 const { Header, Content, Sider } = Layout;
-import menu from "@/menu"; //菜单项
-
+import menu from "@/constant/menu"; //菜单项
 import "./index.css"; //样式
 import { useNavigate, Outlet } from "react-router-dom"; //路由
 function Index() {
@@ -15,7 +14,13 @@ function Index() {
   return (
     <div>
       <Layout>
-        <Header className="header" ></Header>
+        <Header className="site-layout-sub-header-background">
+          <h3>首页</h3>
+          <Avatar
+            style={{ backgroundColor: "#1890ff", }}
+            icon={<AntDesignOutlined />}
+          />
+        </Header>
         <Layout>
           <Sider theme="light" width={200} className="site-layout-background">
             <Menu mode="inline" onClick={choose} items={menu} theme="light" />

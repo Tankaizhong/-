@@ -5,9 +5,7 @@ import type { FormInstance } from "antd/es/form";
 import type { NodeType } from "./index";
 import { useSelector } from "react-redux";
 import { NodeList, addNode, updateNode } from "@/Rudex/Slice/NodeSlice";
-import { checkNode, updataRela } from "@/Rudex/Slice/LinkSlice";
 import useDebounce from "@/utils/useDebounce";
-import { useLocation } from "react-router-dom";
 
 import { nanoid } from "nanoid";
 const EditableContext = React.createContext<FormInstance<any> | null>(null);
@@ -79,7 +77,7 @@ const EditableCell: React.FC<EditableCellProps> = ({
         rules={[
           {
             required: true,
-            message: `${title} is required.`,
+            message: `${title}必填`,
           },
         ]}
       >
@@ -115,8 +113,8 @@ export default function Node(props: any) {
     const newTmp: NodeType = {
       key: nanoid(),
       name: "请输入",
-      attribute: "无",
-      note: "无",
+      attribute: " ",
+      note: " ",
     };
     if (!tmp.length) {
       message.info("请输入节点信息值");

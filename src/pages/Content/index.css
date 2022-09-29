@@ -1,3 +1,10 @@
+.site-layout-sub-header-background {
+  background: #fff !important;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .left_Content {
   margin: 0 16px;
   width: 100%;

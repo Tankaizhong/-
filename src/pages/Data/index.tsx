@@ -4,8 +4,8 @@ import Node from "./Node";
 import { useDispatch } from "react-redux";
 import { removeRela } from "@/Rudex/Slice/LinkSlice";
 import { removeNode } from "@/Rudex/Slice/NodeSlice";
-import "./index.css";
 import { AnyAction } from "@reduxjs/toolkit";
+import "./index.css";
 export interface NodeType {
   key: React.Key;
   name: string;
