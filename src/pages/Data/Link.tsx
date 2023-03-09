@@ -140,7 +140,7 @@ export default function Link(props: any) {
       dataIndex: "target",
       key: "target",
       editable: true,
-      width: "20%",
+      width: "40%",
     },
     {
       title: "删除",

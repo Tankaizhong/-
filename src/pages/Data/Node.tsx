@@ -61,6 +61,8 @@ const EditableCell: React.FC<EditableCellProps> = ({
   };
 
   const save = async () => {
+    console.log(1);
+    
     try {
       const values = await form.validateFields();
       handleSave({ ...record, ...values });
@@ -89,7 +91,7 @@ const EditableCell: React.FC<EditableCellProps> = ({
         />
       </Form.Item>
     ) : (
-      <div className="editable-cell-value-wrap" onClick={toggleEdit}>
+      <div className='editable-cell-value-wrap' onClick={toggleEdit}>
         {children}
       </div>
     );
@@ -112,9 +114,9 @@ export default function Node(props: any) {
   const handleAdd = () => {
     const newTmp: NodeType = {
       key: nanoid(),
-      name: "请输入",
-      attribute: " ",
-      note: " ",
+      name: "节点名",
+      attribute: "属性",
+      note: "备注",
     };
     if (!tmp.length) {
       message.info("请输入节点信息值");
@@ -201,15 +203,15 @@ export default function Node(props: any) {
   });
 
   return (
-    <div className="nodeTbale">
-      <Button className="btn" onClick={useDebounce(handleAdd)}>
+    <div className='nodeTbale'>
+      <Button className='btn' onClick={useDebounce(handleAdd)}>
         添加节点
       </Button>
       <Table
         pagination={{ pageSize: 5 }}
         scroll={{ y: 240 }}
         components={components}
-        size="small"
+        size='small'
         columns={NodeCol}
         dataSource={NodeSource}
         rowClassName={() => "editable-row"}

@@ -14,8 +14,9 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
+    "declaration": true,
     "jsx": "react-jsx",
-    "baseUrl": ".",//ts解析基地址
+    "baseUrl": ".", //ts解析基地址
     "paths": {
       "@/*": ["src/*"] //路径别名
     }
