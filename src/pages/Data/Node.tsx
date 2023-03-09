@@ -6,6 +6,7 @@ import type { NodeType } from "./index";
 import { useSelector } from "react-redux";
 import { NodeList, addNode, updateNode } from "@/Rudex/Slice/NodeSlice";
 import useDebounce from "@/utils/useDebounce";
+import { useLocation } from "react-router-dom";
 
 import { nanoid } from "nanoid";
 const EditableContext = React.createContext<FormInstance<any> | null>(null);
