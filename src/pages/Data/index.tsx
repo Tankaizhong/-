@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "./Link";
 import Node from "./Node";
 import { useDispatch } from "react-redux";
@@ -27,7 +27,7 @@ export default function index() {
   };
   //添加
   return (
-    <div className="main_content">
+    <div className='main_content'>
       <Node dispatch={dispatch} handleDelete={handleDelete} />
       <Link dispatch={dispatch} handleDelete={handleDelete} />
     </div>
