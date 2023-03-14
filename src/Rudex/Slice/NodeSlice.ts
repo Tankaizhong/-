@@ -10,9 +10,11 @@ export const NodeSlice = createSlice({
   initialState,
   reducers: {
     addNode: (state, { payload }) => {
+      // console.log("add");
       state.unshift(payload);
     },
     refresh: (state, { payload }) => {
+      // console.log(payload);
       return payload;
     },
   },
@@ -28,6 +30,8 @@ export const updateNode =
     const chartSource = NodeList(getState());
     let tmp: any[] = [];
     let { ...data } = curdata;
+    console.log(data);
+    
     chartSource.forEach((item: { key: Key }) => {
       if (item.key === data.key) {
         tmp.push(data);

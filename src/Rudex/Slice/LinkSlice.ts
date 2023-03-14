@@ -44,6 +44,7 @@ export const ChartSlice = createSlice({
 export const { removeRela, addRela, refresh } = ChartSlice.actions;
 //关系表数据暴露
 export const ChartList = (state: any) => {
+  // console.log(state.chart)
   return state.chart;
 };
 export const updataRela = (cur: LinkType) => (dispatch: any, getState: any) => {
@@ -72,7 +73,6 @@ export const checkNode =
       }
     });
     // console.log(tmp);
-
     dispatch(refresh(tmp));
   };
 export default ChartSlice.reducer;

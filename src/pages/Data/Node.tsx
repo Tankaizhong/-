@@ -61,10 +61,11 @@ const EditableCell: React.FC<EditableCellProps> = ({
   };
 
   const save = async () => {
-    console.log(1);
-    
+    // console.log(1);
+
     try {
       const values = await form.validateFields();
+      // console.log({ ...record, ...values });
       handleSave({ ...record, ...values });
     } catch (errInfo) {
       console.log("Save failed:", errInfo);
@@ -128,23 +129,19 @@ export default function Node(props: any) {
   };
   //保存
   const handleSave = (row: NodeType, type: string) => {
-    //添加数据
-    const res = judge(row.name, NodeSource);
-    if (res) {
-      dispatch(updateNode(row));
-      setSmp([]); //清空缓存
-    }
+    dispatch(updateNode(row));
+    setSmp([]); //清空缓存
   };
   //重复节点?
-  const judge = (data: string, list: NodeType[]) => {
-    for (let index = 0; index < list.length; index++) {
-      const element = list[index];
-      if (element.name == data) {
-        return false;
-      }
-    }
-    return true;
-  };
+  // const judge = (data: string, list: NodeType[]) => {
+  //   for (let index = 0; index < list.length; index++) {
+  //     const element = list[index];
+  //     if (element.name == data) {
+  //       return false;
+  //     }
+  //   }
+  //   return true;
+  // };
   let NodeCol = [
     {
       title: "节点名",
