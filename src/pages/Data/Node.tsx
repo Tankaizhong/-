@@ -61,11 +61,8 @@ const EditableCell: React.FC<EditableCellProps> = ({
   };
 
   const save = async () => {
-    // console.log(1);
-
     try {
       const values = await form.validateFields();
-      // console.log({ ...record, ...values });
       handleSave({ ...record, ...values });
     } catch (errInfo) {
       console.log("Save failed:", errInfo);
@@ -75,8 +72,10 @@ const EditableCell: React.FC<EditableCellProps> = ({
   if (editable) {
     childNode = editing ? (
       <Form.Item
-        style={{ margin: 0 }}
         name={dataIndex}
+        style={{
+          textAlign: "left",
+        }}
         rules={[
           {
             required: true,
@@ -84,12 +83,20 @@ const EditableCell: React.FC<EditableCellProps> = ({
           },
         ]}
       >
-        <Input
-          style={{ border: "0", marginRight: "0" }}
-          ref={inputRef}
-          onPressEnter={save}
-          onBlur={save}
-        />
+        <div
+          className='content'
+        >
+          <Input
+            style={{
+              whiteSpace: "nowrap",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+            }}
+            ref={inputRef}
+            onPressEnter={save}
+            onBlur={save}
+          />
+        </div>
       </Form.Item>
     ) : (
       <div className='editable-cell-value-wrap' onClick={toggleEdit}>
@@ -161,6 +168,8 @@ export default function Node(props: any) {
       title: "备注",
       dataIndex: "note",
       width: "20%",
+      // innerHeight: "30%",
+      height: "40%",
       key: "note",
       editable: true,
     },
@@ -206,7 +215,11 @@ export default function Node(props: any) {
       </Button>
       <Table
         pagination={{ pageSize: 5 }}
-        scroll={{ y: 240 }}
+        // scroll={{ y: 240 }}
+        style={{
+          width: "100%",
+          height: "100%",
+        }}
         components={components}
         size='small'
         columns={NodeCol}

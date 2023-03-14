@@ -30,7 +30,7 @@ export const updateNode =
     const chartSource = NodeList(getState());
     let tmp: any[] = [];
     let { ...data } = curdata;
-    console.log(data);
+    // console.log(data);
     
     chartSource.forEach((item: { key: Key }) => {
       if (item.key === data.key) {
